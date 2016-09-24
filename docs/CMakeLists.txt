@@ -1,0 +1,21 @@
+# Doxygen is required for the documentation to be built. Do not fail silently.
+FIND_PACKAGE(Doxygen REQUIRED)
+
+SET(DOCS_CONFIG "${CMAKE_CURRENT_SOURCE_DIR}/doxygen.mk")
+SET(DOCS_CONFIG_OUT "${CMAKE_CURRENT_BINARY_DIR}/doxygen.mk.out")
+
+SET(DOCS_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+CONFIGURE_FILE(${DOCS_CONFIG} ${DOCS_CONFIG_OUT})
+
+ADD_CUSTOM_TARGET(docs
+    ALL
+    COMMAND ${DOXYGEN_EXECUTABLE} ${DOCS_CONFIG_OUT}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "Generating Documentation"
+    VERBATIM)
+
+# Install Doxygen documentation
+INSTALL(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html DESTINATION ${PROJECT_INSTALL_DOC_DIR}
+    COMPONENT documentation
+    PATTERN ".git" EXCLUDE
+)
