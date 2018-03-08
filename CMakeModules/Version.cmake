@@ -27,7 +27,6 @@ ELSEIF("${CMAKE_C_COMPILER_ID}" STREQUAL "MSVC")
 ENDIF()
 
 SET(COMPILER_VERSION "${CMAKE_C_COMPILER_VERSION}")
-SET(AF_COMPILER_STRING "${COMPILER_NAME} ${COMPILER_VERSION}")
 
 EXECUTE_PROCESS(
     COMMAND git log -1 --format=%h
@@ -37,8 +36,8 @@ EXECUTE_PROCESS(
 )
 
 IF(NOT GIT_COMMIT_HASH)
-    MESSAGE(STATUS "No git. Setting hash to default")
-    SET(GIT_COMMIT_HASH "default")
+    MESSAGE(STATUS "Could not find git. Setting the commit hash to 'missing'")
+    SET(GIT_COMMIT_HASH "missing")
 ENDIF()
 
 CONFIGURE_FILE(

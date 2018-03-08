@@ -1,10 +1,19 @@
-This is a CMake project template 
+# CMake Template
 
+This project is a template which provides project structure and build tools for
+modern, cross-platform C/C++ software development. The project uses the CMake
+build system and provides pre-configured instances of versioning, documentation,
+testing, and packaging tools.
+
+| Component              | Implemented Using           |
+|------------------------|-----------------------------|
+| Build System           | CMake                       |
+| Version Identification | CMakeModules/Version.cmake  |
+| Documentation          | Doxygen and graphviz        |
+| Testing                | Google Test                 |
+| Packaging              | CPack                       |
+ 
 # Prerequisites
-
-* Build System: CMake, Git
-* Documentation: Doxygen and graphviz
-* Compilation: C++ Compiler
 
 ## Debian-based Distributions
 
