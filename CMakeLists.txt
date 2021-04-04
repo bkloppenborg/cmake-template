@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0)
 # Define a meaningful name for your project that doesn't include spaces. This
 # will be used in multiple locations.
 PROJECT(Foo)
@@ -40,6 +40,9 @@ add_custom_target(
 IF(BUILD_DOCS)
   add_subdirectory(docs)
 ENDIF()
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(src)
 
