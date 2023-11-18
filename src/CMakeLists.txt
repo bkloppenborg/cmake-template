@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.22)
 
 # include the current directory for older versions of CMake
 if(CMAKE_VERSION VERSION_LESS "3.7.0")

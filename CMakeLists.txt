@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.22)
 # Define a meaningful name for your project that doesn't include spaces. This
 # will be used in multiple locations.
 PROJECT(Foo)
@@ -12,7 +12,7 @@ INCLUDE(InstallDirs)
 SET(PROJECT_NAME "FooBar")
 SET(PROJECT_PREFIX "FB")
 
-# Information about yourself or your company. This information is included in 
+# Information about yourself or your company. This information is included in
 SET(VENDOR_NAME "Your Company/Personal Name here")
 SET(VENDOR_CONTACT "Company Support <support@domain.tld>")
 
